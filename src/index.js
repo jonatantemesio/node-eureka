@@ -10,6 +10,7 @@ app.listen(PORT, () => {
 })
 
 app.get('/user', (req, res) => {
+  // Valid the request host
   if (req.headers['x-forwarded-host'] == "localhost:8080") {
     res.json("I am user-service");
   } else {
